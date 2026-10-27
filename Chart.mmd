@@ -1,0 +1,32 @@
+---
+config:
+  layout: fixed
+---
+flowchart LR
+    A["1. CASE DEFINITION<br>Data centre location, age, capacity<br>Cooling system, asset life"] --> C["3. ASSET VULNERABILITY<br>Heat thresholds, cooling efficiency<br>Redundancy and operating limits"] & E["5. FINANCIAL TRANSMISSION<br>Energy costs, lost revenue<br>Operating costs and cash flow"]
+    B["2. CLIMATE HAZARD<br>Climate pathway and time horizon<br>Extreme-heat exposure"] --> C
+    C --> D["4. OPERATIONAL IMPACT<br>Cooling electricity demand<br>Capacity constraints and downtime"]
+    D --> E
+    E --> F["6. DECISION COMPARISON<br>Maintain, retrofit, or replace<br>Intervention costs and effectiveness"]
+    F --> G["OUTPUTS<br>Financial impact, residual risk<br>Cost-benefit comparison and uncertainty"]
+    F -. Updated asset characteristics .-> C
+    H["External data<br>Climate projections, asset benchmarks,<br>energy prices and financial parameters"] --> B & C & E & F
+    I["Assumptions and uncertainty<br>Data gaps, parameter ranges,<br>sensitivity tests"] L_I_B_0@-.-> B & C & E & F
+
+     A:::input
+     C:::process
+     E:::process
+     B:::input
+     D:::process
+     F:::process
+     G:::output
+     H:::input
+     I:::support
+    classDef input fill:#e8eef8,stroke:#5474a6,color:#172b4d
+    classDef process fill:#e8f3ee,stroke:#4b8b70,color:#173d2d
+    classDef output fill:#f8eedc,stroke:#b58a43,color:#513a13
+    classDef support fill:#f0e9f7,stroke:#9274ad,color:#38264b
+
+    L_I_B_0@{ curve: linear } 
+    L_I_C_0@{ curve: linear } 
+    L_I_E_0@{ curve: linear }
